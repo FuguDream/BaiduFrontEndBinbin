@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斌斌学院-任务四</title>
+</head>
+<body>
+    <input id="num" type="text">&nbsp;<input id="leftInput" type="button" value="左侧入">&nbsp;<input id="rightInput" type="button" value="右侧入">&nbsp;&nbsp;&nbsp;<input id="leftOutput" type="button" value="左侧出">&nbsp;<input id="rightOutput" type="button" value="右侧出">
+    <div id="list"></div>
+    <script>
+        var list = document.getElementById("list");
+        var num = document.getElementById("num");
+        //设置插入队列的数字框的属性
+        function spanSetting(span) {
+            span.style.display = "inline-block";
+            span.style.margin = "5px";
+            span.style.backgroundColor = "red";
+            span.style.height = "50px";
+            span.style.width = "50px";
+            span.style.lineHeight = "50px";
+            span.style.textAlign = "center";
+            span.style.color = "white";
+            span.style.float = "left";
+        }
+
+        var leftInput = document.getElementById("leftInput");
+        leftInput.onclick = function () {
+            var span = document.createElement("span");
+            spanSetting(span);
+            span.textContent = num.value;
+            if(span.textContent && !isNaN(parseInt(span.textContent))){
+                list.insertBefore(span, list.childNodes[0]);
+                num.value = null;
+            }
+        }
+
+        var rightInput = document.getElementById("rightInput");
+        rightInput.onclick = function () {
+            var span = document.createElement("span");
+            spanSetting(span);
+            span.textContent = num.value;
+            if(span.textContent && !isNaN(parseInt(span.textContent))){
+                list.appendChild(span);
+                num.value = null;
+            }
+        }
+
+        var leftOutput = document.getElementById("leftOutput");
+        leftOutput.onclick = function () {
+            if (list.childNodes.length === 0){
+                alert("队列为空");
+            }
+            alert(list.firstChild.textContent);
+            list.removeChild(list.firstChild);
+        }
+
+        var rightOutput = document.getElementById("rightOutput");
+        rightOutput.onclick = function () {
+            if (list.childNodes.length === 0){
+                alert("队列为空");
+            }
+            alert(list.lastChild.textContent);
+            list.removeChild(list.lastChild);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斌斌学院-任务五</title>
+</head>
+<style>
+    .stage
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        height: 520px;
+    }
+
+    .orange
+    {
+        display : inline-block;
+        margin : 3px;
+        background-color : orange;
+        width : 15px;
+    }
+
+    .orange:hover{
+        background-color: orangered;
+    }
+
+    .orangered
+    {
+        display : inline-block;
+        margin : 3px;
+        background-color : orangered;
+        width : 15px;
+    }
+</style>
+<body>
+<input id="screen" type="text">
+<input id="leftInput" type="button" value="左侧入">
+<input id="rightInput" type="button" value="右侧入">&nbsp;&nbsp;
+<input id="leftOutput" type="button" value="左侧出">
+<input id="rightOutput" type="button" value="右侧出">&nbsp;&nbsp;
+<input id="randomQueue" type="button" value="创建随机队列">
+<input id="bubbleSort" type="button" value="冒泡排序">
+<div class="stage" id="stage"></div>
+<script src="js/TaskFiveJs.js"></script>
+</body>
+</html>
