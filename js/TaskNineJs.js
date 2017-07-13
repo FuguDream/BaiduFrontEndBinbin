@@ -97,10 +97,6 @@ window.onload = function () {
             })(node);
         show();
     }
-    
-    DLR.onclick = function () {
-        DLRType(root);
-    };
 
     //删除功能
     function delnode(node) {
@@ -125,6 +121,11 @@ window.onload = function () {
         electee = e.target;
         electee.style.backgroundColor = "dodgerblue";
     });
+
+
+    DLR.onclick = function () {
+        DLRType(root);
+    };
     
     query.onclick = function () {
         queryInfo = ndQueryInfo.value;
